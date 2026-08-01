@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerCharacteristics="*uid://clmkvow6yw3a2"
+Worldgen="*uid://h0gtr8f6gaky"
 
 [display]
 
