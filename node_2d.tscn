@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
 size = Vector2(70, 569)
 
-[node name="Node2D" type="Node2D" unique_id=2132705338]
+[node name="MainScene" type="Node2D" unique_id=2132705338]
 
 [node name="CharacterBody2D" parent="." unique_id=1880793280 instance=ExtResource("1_epypp")]
 position = Vector2(666, 294)
@@ -58,5 +58,6 @@ offset_right = 475.0
 offset_bottom = 428.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=583233687 node_paths=PackedStringArray("Player")]
+zoom = Vector2(0.7, 0.7)
 script = ExtResource("5_q6r6c")
 Player = NodePath("../CharacterBody2D")
