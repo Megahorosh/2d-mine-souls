@@ -3,9 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dt3grk1ic4utg" path="res://actors/Player/player.tscn" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://cq6jsqbu4hglh" path="res://UI/entities/Bars/StaminaBar/stamina_bar.tscn" id="3_epypp"]
-[ext_resource type="PackedScene" uid="uid://f6qikm3d5vsx" path="res://TerrainGeneration/terrain_generator.tscn" id="4_0hol4"]
+[ext_resource type="PackedScene" uid="uid://f6qikm3d5vsx" path="res://TerrainGeneration/terrain_renderer.tscn" id="4_0hol4"]
 [ext_resource type="Script" uid="uid://bycga5r125bi3" path="res://UI/widgets/FPStracker/fps_tracker.gd" id="4_kdubu"]
 [ext_resource type="Script" uid="uid://dcnn0xtp56wan" path="res://actors/Player/PlayerCamera.gd" id="5_q6r6c"]
+[ext_resource type="PackedScene" uid="uid://by2h2bsg7kcnh" path="res://TerrainGeneration/water.tscn" id="6_d21ai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
 size = Vector2(70, 569)
@@ -56,6 +57,7 @@ offset_left = 475.0
 offset_top = 428.0
 offset_right = 475.0
 offset_bottom = 428.0
+water_tile = ExtResource("6_d21ai")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=583233687 node_paths=PackedStringArray("Player")]
 zoom = Vector2(0.7, 0.7)

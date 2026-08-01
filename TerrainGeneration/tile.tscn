@@ -9,3 +9,6 @@
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=422601270]
 scale = Vector2(1, 0.75)
 texture = ExtResource("1_2v8kq")
+
+[node name="Wall" type="Sprite2D" parent="StaticBody2D" unique_id=1645886525]
+position = Vector2(0, 64)
