@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dt3grk1ic4utg" path="res://actors/Player/player.tscn" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://cq6jsqbu4hglh" path="res://UI/entities/Bars/StaminaBar/stamina_bar.tscn" id="3_epypp"]
+[ext_resource type="PackedScene" uid="uid://f6qikm3d5vsx" path="res://TerrainGeneration/terrain_generator.tscn" id="4_0hol4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
 size = Vector2(70, 569)
@@ -10,7 +11,7 @@ size = Vector2(70, 569)
 [node name="Node2D" type="Node2D" unique_id=2132705338]
 
 [node name="CharacterBody2D" parent="." unique_id=1880793280 instance=ExtResource("1_epypp")]
-position = Vector2(605, 330)
+position = Vector2(666, 294)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1509697872]
 
@@ -40,3 +41,10 @@ theme_override_constants/separation = 14
 
 [node name="Stamina" parent="CanvasLayer/Control/VBoxContainer" unique_id=770436887 instance=ExtResource("3_epypp")]
 layout_mode = 2
+
+[node name="TerrainGenerator" parent="." unique_id=1336938675 instance=ExtResource("4_0hol4")]
+z_index = -1
+offset_left = 475.0
+offset_top = 428.0
+offset_right = 475.0
+offset_bottom = 428.0
