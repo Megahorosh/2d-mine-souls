@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cq6jsqbu4hglh"]
+
+[ext_resource type="Script" uid="uid://vgcji35rdw01" path="res://UI/entities/Bars/Bar.gd" id="1_pflro"]
+[ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="1_wgcoq"]
+
+[node name="Stamina" type="Control" unique_id=770436887]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pflro")
+
+[node name="Label" type="Label" parent="." unique_id=460127258]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1038482361]
+scale = Vector2(1, 0.09375)
+texture = ExtResource("1_wgcoq")
+centered = false

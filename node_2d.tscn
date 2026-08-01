@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cpg08qcqvwp4k"]
+
+[ext_resource type="PackedScene" uid="uid://dt3grk1ic4utg" path="res://actors/Player/player.tscn" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://cq6jsqbu4hglh" path="res://UI/entities/Bars/StaminaBar/stamina_bar.tscn" id="3_epypp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(70, 569)
+
+[node name="Node2D" type="Node2D" unique_id=2132705338]
+
+[node name="CharacterBody2D" parent="." unique_id=1880793280 instance=ExtResource("1_epypp")]
+position = Vector2(605, 330)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1509697872]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=808885694]
+position = Vector2(170, 321)
+scale = Vector2(0.5625, 4.484375)
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2095889641]
+position = Vector2(170, 321)
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=69915171]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=2144573854]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=190154564]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 24.000002
+offset_transform_enabled = true
+theme_override_constants/separation = 14
+
+[node name="Stamina" parent="CanvasLayer/Control/VBoxContainer" unique_id=770436887 instance=ExtResource("3_epypp")]
+layout_mode = 2
