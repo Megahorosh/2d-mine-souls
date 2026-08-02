@@ -7,8 +7,8 @@ extends Node
 @export var tile_size_y: int = 48
 
 var renderGrid = []
-var renderGridSizeX: float = 32
-var renderGridSizeY: float = 27
+var renderGridSizeX: float = 36
+var renderGridSizeY: float = 31
 
 var playerPosRoundedX: float = 0
 var playerPosRoundedY: float = 0

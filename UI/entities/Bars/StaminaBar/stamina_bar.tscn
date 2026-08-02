@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://cq6jsqbu4hglh"]
 
 [ext_resource type="Script" uid="uid://vgcji35rdw01" path="res://UI/entities/Bars/Bar.gd" id="1_pflro"]
-[ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="1_wgcoq"]
+[ext_resource type="Texture2D" uid="uid://cq0t6ufvis1jm" path="res://assets/background/black_transparent_64.png" id="2_gurhp"]
+[ext_resource type="Texture2D" uid="uid://dprwhkbrjy7lw" path="res://assets/player_stats/stamina_green.png" id="3_skn5i"]
 
-[node name="Stamina" type="Control" unique_id=770436887]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Stamina" type="Node2D" unique_id=536819698]
 script = ExtResource("1_pflro")
 
 [node name="Label" type="Label" parent="." unique_id=460127258]
-layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1038482361]
-scale = Vector2(1, 0.09375)
-texture = ExtResource("1_wgcoq")
+[node name="maxStamina" type="Sprite2D" parent="." unique_id=1995389202]
+scale = Vector2(1, 0.1)
+texture = ExtResource("2_gurhp")
+centered = false
+
+[node name="currentStamina" type="Sprite2D" parent="." unique_id=911288991]
+scale = Vector2(1, 0.1)
+texture = ExtResource("3_skn5i")
 centered = false

@@ -4,21 +4,29 @@ extends Label
 @export var line2d: Line2D
 
 var fps_counter: float = 0.0
-var fps_history = []
-var max_samples: int = 100
+var fps_history = [1, 2, 3]
+var max_samples: int = 200
+var graph_height: float = 70
 
 var max_fps: float = 0
+var min_fps: float = 0
 
 func _ready():
 	line2d.default_color = Color.GREEN
 	line2d.width = 2.0
 	# Позиционируем график
-	line2d.position = Vector2(10, 50)
+	#line2d.position = Vector2(100, 35)
 
 func _process(delta: float) -> void:
 	var fps = 1.0 / delta
+		
+	max_fps = fps_history.max()
+	min_fps = fps_history.min()
+	
 	fps_counter = lerp(fps_counter, fps, 0.1)
-	text = str(int(fps_counter)) + " FPS"
+	text = "fps: " + str(int(fps_counter)) + "\n" \
+		+ "min: " + str(int(min_fps)) + "\n" \
+		+ "max: " + str(int(max_fps))
 	
 	fps_history.append(fps)
 	if fps_history.size() > max_samples:
@@ -29,14 +37,12 @@ func _process(delta: float) -> void:
 func update_graph():
 	var points = []
 	var graph_width = max_samples  # Фиксированная ширина графика
-	var graph_height = 50
 	var x_step = graph_width / (max_samples - 1)
 	var fps_median = get_median(fps_history)
-	if (fps_history.max() > fps_median): max_fps = fps_median
 	
 	for i in range(fps_history.size()):
 		var x = i * x_step
-		var y = graph_height - (clamp(fps_history[i], 0, max_fps) / max_fps * graph_height)
+		var y = graph_height - (clamp(fps_history[i], 0, fps_median) / fps_median * graph_height)
 		points.append(Vector2(x, y))
 	
 	line2d.points = PackedVector2Array(points)
