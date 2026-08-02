@@ -89,7 +89,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(direction * target_speed, current_acceleration)
 	else:
 		# Если ввода нет - плавно тормозим
-		velocity = velocity.move_toward(Vector2.ZERO, friction)
+		velocity = velocity.move_toward(Vector2.ZERO, current_friction)
 	
 	move_and_slide()
 	

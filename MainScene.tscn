@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://cq6jsqbu4hglh" path="res://UI/entities/Bars/StaminaBar/stamina_bar.tscn" id="3_epypp"]
 [ext_resource type="PackedScene" uid="uid://f6qikm3d5vsx" path="res://TerrainGeneration/terrain_renderer.tscn" id="4_0hol4"]
-[ext_resource type="Script" uid="uid://bycga5r125bi3" path="res://UI/widgets/FPStracker/fps_tracker.gd" id="4_kdubu"]
+[ext_resource type="Script" uid="uid://bycga5r125bi3" path="res://UI/widgets/fps_counter/fps_counter.gd" id="4_kdubu"]
 [ext_resource type="Script" uid="uid://dcnn0xtp56wan" path="res://actors/Player/PlayerCamera.gd" id="5_q6r6c"]
-[ext_resource type="PackedScene" uid="uid://by2h2bsg7kcnh" path="res://TerrainGeneration/water.tscn" id="6_d21ai"]
+[ext_resource type="PackedScene" uid="uid://by2h2bsg7kcnh" path="res://scenes/tiles/water.tscn" id="6_d21ai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
 size = Vector2(70, 569)
@@ -46,9 +46,11 @@ theme_override_constants/separation = 14
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=701181235]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "aboba"
+offset_left = 11.0
+offset_top = 28.0
+offset_right = 60.0
+offset_bottom = 51.0
+text = "fps_label"
 script = ExtResource("4_kdubu")
 
 [node name="TerrainGenerator" parent="." unique_id=1336938675 node_paths=PackedStringArray("Player") instance=ExtResource("4_0hol4")]
