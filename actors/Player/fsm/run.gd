@@ -13,10 +13,15 @@ func exit() -> void:
 
 func inner_physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	player.animation.play("sprint")
 	
 	# Если перестали двигаться – сразу в Idle
 	if direction == Vector2.ZERO:
 		stateMachine.changeTo("Idle")
+		return
+		
+	if Player.player_stamina <= 0:
+		stateMachine.changeTo("Walk")
 		return
 	
 	# Кнопка спринта всё ещё зажата – остаёмся в Sprint

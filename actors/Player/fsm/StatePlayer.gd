@@ -5,4 +5,5 @@ extends State
 var player: Player
 
 func _ready() -> void:
-	player = owner as Player
+	# Вместо owner используем get_parent().get_parent()
+	player = get_parent().get_parent() as Player

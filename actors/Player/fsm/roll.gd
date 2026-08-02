@@ -35,3 +35,5 @@ func inner_physics_process(_delta: float) -> void:
 				stateMachine.changeTo("Walk")
 		else:
 			stateMachine.changeTo("Idle")
+
+	player.animation.play("roll")

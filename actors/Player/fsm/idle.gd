@@ -11,3 +11,5 @@ func inner_physics_process(_delta: float) -> void:
 			stateMachine.changeTo("Sprint")
 		else:
 			stateMachine.changeTo("Walk")
+	
+	player.animation.play("idle")

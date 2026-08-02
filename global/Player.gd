@@ -16,3 +16,5 @@ static var isDodging: bool = false
 static var isWalking: bool = false
 
 static var move_controller: MoveController = null
+
+@onready var animation = $AnimatedSprite2D
