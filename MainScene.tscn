@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://cq6jsqbu4hglh" path="res://UI/entities/Bars/StaminaBar/stamina_bar.tscn" id="3_epypp"]
 [ext_resource type="PackedScene" uid="uid://f6qikm3d5vsx" path="res://TerrainGeneration/terrain_renderer.tscn" id="4_0hol4"]
-[ext_resource type="Script" uid="uid://bycga5r125bi3" path="res://UI/widgets/fps_counter/fps_counter.gd" id="4_kdubu"]
+[ext_resource type="PackedScene" uid="uid://c01i27h32qfm4" path="res://UI/shared/FPSCounter/fps_counter.tscn" id="4_5crlr"]
 [ext_resource type="Script" uid="uid://dcnn0xtp56wan" path="res://actors/Player/PlayerCamera.gd" id="5_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://by2h2bsg7kcnh" path="res://scenes/tiles/water.tscn" id="6_d21ai"]
 
@@ -45,13 +45,7 @@ theme_override_constants/separation = 14
 [node name="Stamina" parent="CanvasLayer/Control/VBoxContainer" unique_id=770436887 instance=ExtResource("3_epypp")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=701181235]
-offset_left = 11.0
-offset_top = 28.0
-offset_right = 60.0
-offset_bottom = 51.0
-text = "fps_label"
-script = ExtResource("4_kdubu")
+[node name="FPS" parent="CanvasLayer" unique_id=984221827 instance=ExtResource("4_5crlr")]
 
 [node name="TerrainGenerator" parent="." unique_id=1336938675 node_paths=PackedStringArray("Player") instance=ExtResource("4_0hol4")]
 z_index = -1

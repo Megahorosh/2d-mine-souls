@@ -1,8 +1,8 @@
 extends Node
 
 var world = []
-var worldSizeX = 100
-var worldSizeY = 100
+var worldSizeX = 1000
+var worldSizeY = 1000
 # Called when the node enters the scene tree for the first time.
 func _init() -> void:
 	for i in range(worldSizeX):
