@@ -12,5 +12,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	bar_sprite.scale.x = PlayerCharacteristics.player_stamina / 75
-	background_sprite.scale.x = PlayerCharacteristics.player_max_stamina / 75
+	bar_sprite.scale.x = Player.player_stamina / 75
+	background_sprite.scale.x = Player.player_max_stamina / 75

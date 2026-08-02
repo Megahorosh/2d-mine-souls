@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpg08qcqvwp4k"]
 
-[ext_resource type="PackedScene" uid="uid://dt3grk1ic4utg" path="res://actors/Player/player.tscn" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://dt3grk1ic4utg" path="res://actors/Player/Player.tscn" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://cq6jsqbu4hglh" path="res://UI/entities/Bars/StaminaBar/stamina_bar.tscn" id="3_epypp"]
 [ext_resource type="PackedScene" uid="uid://f6qikm3d5vsx" path="res://TerrainGeneration/terrain_renderer.tscn" id="4_0hol4"]
@@ -13,7 +13,7 @@ size = Vector2(70, 569)
 
 [node name="MainScene" type="Node2D" unique_id=2132705338]
 
-[node name="CharacterBody2D" parent="." unique_id=1880793280 instance=ExtResource("1_epypp")]
+[node name="Player" parent="." unique_id=1880793280 instance=ExtResource("1_epypp")]
 position = Vector2(666, 294)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1509697872]
@@ -64,10 +64,10 @@ offset_left = 475.0
 offset_top = 428.0
 offset_right = 475.0
 offset_bottom = 428.0
-Player = NodePath("../CharacterBody2D")
+Player = NodePath("../Player")
 water_tile = ExtResource("6_d21ai")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=583233687 node_paths=PackedStringArray("Player")]
 zoom = Vector2(0.7, 0.7)
 script = ExtResource("5_q6r6c")
-Player = NodePath("../CharacterBody2D")
+Player = NodePath("../Player")

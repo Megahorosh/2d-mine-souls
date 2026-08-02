@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b7ur4ovc5er4j" path="res://actors/Player/MoveController.gd" id="1_mvpqy"]
 [ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="2_1yqc4"]
 [ext_resource type="SpriteFrames" uid="uid://3synb8yx4c0i" path="res://assets/animations/Player/Player_sprite_frames.tres" id="3_ukewa"]
-[ext_resource type="Script" uid="uid://dbeu5lgn0gmiv" path="res://actors/Player/fsm/StateMachine.gd" id="4_yf7wk"]
+[ext_resource type="Script" uid="uid://dbeu5lgn0gmiv" path="res://actors/Player/fsm/fsm.gd" id="4_yf7wk"]
 [ext_resource type="Script" uid="uid://c27x6pnnwrmoc" path="res://actors/Player/fsm/idle.gd" id="5_h27ub"]
 [ext_resource type="Script" uid="uid://c42duvynih7rm" path="res://actors/Player/fsm/walk.gd" id="6_3t71a"]
 [ext_resource type="Script" uid="uid://dho4l2j0ao78u" path="res://actors/Player/debug.gd" id="6_x4p6e"]
@@ -33,7 +33,7 @@ position = Vector2(0, -24)
 scale = Vector2(0.40625, 0.40625)
 sprite_frames = ExtResource("3_ukewa")
 animation = &"idle"
-frame_progress = 0.8012921
+frame_progress = 0.4394495
 offset = Vector2(4.48, -24.29)
 
 [node name="FSM" type="Node" parent="." unique_id=70531068]

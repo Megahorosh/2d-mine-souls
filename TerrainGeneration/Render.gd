@@ -1,3 +1,4 @@
+class_name Render
 extends Node
 
 @export var Player: Node2D

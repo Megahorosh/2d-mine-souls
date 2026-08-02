@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dt3grk1ic4utg"]
+
+[ext_resource type="Script" uid="uid://b7ur4ovc5er4j" path="res://actors/Player/MoveController.gd" id="1_mvpqy"]
+[ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="2_1yqc4"]
+[ext_resource type="SpriteFrames" uid="uid://3synb8yx4c0i" path="res://assets/animations/Player/Player_sprite_frames.tres" id="3_ukewa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fuia"]
+radius = 18.0
+height = 48.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1880793280]
+script = ExtResource("1_mvpqy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1774855840]
+visible = false
+position = Vector2(0, -24)
+scale = Vector2(0.40625, 0.40625)
+texture = ExtResource("2_1yqc4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1547225264]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5fuia")
+debug_color = Color(0.9299975, 0.21950799, 0.3862631, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=981475959]
+position = Vector2(0, -24)
+scale = Vector2(0.40625, 0.40625)
+sprite_frames = ExtResource("3_ukewa")
+animation = &"idle"
+frame_progress = 0.37148952
+offset = Vector2(4.48, -24.29)
