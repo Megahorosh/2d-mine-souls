@@ -66,10 +66,10 @@ scale = Vector2(0.72, 0.72)
 
 [node name="TerrainGenerator" parent="." unique_id=1336938675 node_paths=PackedStringArray("Player", "camera") instance=ExtResource("4_0hol4")]
 z_index = -1
-offset_left = 518.0
-offset_top = 245.0
-offset_right = 518.0
-offset_bottom = 245.0
+offset_left = 344.0
+offset_top = 220.0
+offset_right = 344.0
+offset_bottom = 220.0
 Player = NodePath("../Player")
 camera = NodePath("../Camera2D")
 water_tile = ExtResource("6_d21ai")

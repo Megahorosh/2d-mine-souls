@@ -13,11 +13,11 @@ extends CharacterBody2D
 @export var dodge_duration: float = 0.4
 @export var dodge_stamina_cost: float = 20
 
-@export var stamina_substract_coeff: float = 20
+@export var stamina_substract_coeff: float = 12
 @export var stamina_recovery_coeff: float = 20
 @export var stamina_recovery_delay: float = 1
 
-@onready var animationSprite = $Player/AnimatedSprite2D
+@onready var player = $Player
 
 var stamina_recovery_timer: float = 0
 
@@ -31,10 +31,9 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	Player.playerDirection = direction
 	
-	print("animationSprite: ", animationSprite, "     direction.x:", direction.x)
-	
-	if animationSprite and direction.x != 0:
-		animationSprite.flip_h = direction.x < 0
+	if player and direction.x != 0:
+		player.scale.x = -1 if direction.x < 0 else 1
+		#weaponAnimationSprite.flip_h = direction.x < 0
 	
 	var target_speed := speed
 	var current_acceleration := acceleration
@@ -61,8 +60,13 @@ func _physics_process(delta: float) -> void:
 		target_speed = speed * dodge_coeff
 		current_acceleration = acceleration * dodge_coeff
 		current_friction = friction * dodge_coeff
+		
+	if Player.isLightAttacking:
+		stamina_recovery_timer = 0
 	
 	# Применяем движение
+	if Player.isLightAttacking:
+		return
 	if direction != Vector2.ZERO:
 		velocity = velocity.move_toward(direction * target_speed, current_acceleration)
 	else:
