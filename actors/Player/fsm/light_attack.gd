@@ -5,7 +5,7 @@ var start_time: float = 0.0
 var stamina_consumed: bool = false
 
 var stamina_cost: float = 25
-var attack_duration: float = 1
+var attack_duration: float = 1.3
 
 func enter(_msg: Dictionary = {}) -> void:
 	Player.isLightAttacking = true

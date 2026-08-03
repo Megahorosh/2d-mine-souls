@@ -175,7 +175,8 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_a0hew"]
 resource_name = "light_attack_alebarda"
-step = 0.083333336
+length = 1.5
+step = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -183,10 +184,10 @@ tracks/0/path = NodePath("Player/Weapon:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.109619536, 0.21833265, 0.30166596, 0.3813736, 0.42754364, 0.46646237, 0.49722338, 0.6104686, 0.71827525, 0.8333334, 0.9166667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.16808331, 0.3467089, 0.47154462, 0.59118056, 0.647634, 0.6907872, 0.7263875, 0.7264, 0.86738825, 1.0223794, 1.1790707, 1.3109765),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(32, -26), Vector2(32, -48), Vector2(1.9073486e-06, -78), Vector2(-56, -70), Vector2(-37, -91), Vector2(16, -87), Vector2(63.000004, -58), Vector2(72.00001, -12.000002), Vector2(57, -33), Vector2(25, -36), Vector2(20.000002, -36), Vector2(17, -29)]
+"values": [Vector2(32, -26), Vector2(32, -48), Vector2(1.9073486e-06, -78), Vector2(-56, -70), Vector2(-37, -91), Vector2(16, -87), Vector2(63.000004, -58), Vector2(72.00001, -12.000002), Vector2(68.00001, -5.000002), Vector2(57, -33), Vector2(25, -36), Vector2(20.000002, -36), Vector2(17, -29)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -195,7 +196,7 @@ tracks/1/path = NodePath("Player/Weapon:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.109619536, 0.21833265, 0.30166596, 0.3813736, 0.42754364, 0.46646237, 0.49722338, 0.6104686, 0.71827525, 0.8333334, 0.9166667),
+"times": PackedFloat32Array(0, 0.16808331, 0.3467089, 0.47154462, 0.59118056, 0.647634, 0.6907872, 0.7263875, 0.86738825, 1.0223794, 1.1790707, 1.3109765),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [1.5707964, 1.0471976, -0.4171337, -1.5760323, -1.0905809, -0.24868596, 0.867751, 1.7326977, 1.3089969, 1.1549536, 1.4606652, 1.608586]
@@ -207,7 +208,7 @@ tracks/2/path = NodePath("Player/PlayerSprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.109619536, 0.21833265, 0.30166596, 0.3813736, 0.42754364, 0.46646237, 0.49722338, 0.6104686, 0.71827525, 0.8333334, 0.9166667),
+"times": PackedFloat32Array(0, 0.16808331, 0.3467089, 0.47154462, 0.59118056, 0.647634, 0.6907872, 0.7263875, 0.86738825, 1.0223794, 1.1790707, 1.3109765),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]

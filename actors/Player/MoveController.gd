@@ -9,7 +9,9 @@ extends CharacterBody2D
 @export var sprint_coeff: float = 2.0
 @export var sprint_delay: float = 0.2
 
-@export var dodge_coeff: float = 4.0
+@export var dodge_speed_coeff: float = 4.0
+@export var dodge_acc_coeff: float = 100.0
+@export var dodge_fric_coeff: float = 100.0
 @export var dodge_duration: float = 0.4
 @export var dodge_stamina_cost: float = 20
 
@@ -57,9 +59,9 @@ func _physics_process(delta: float) -> void:
 	# Логика уворота
 	if Player.isDodging:
 		stamina_recovery_timer = 0
-		target_speed = speed * dodge_coeff
-		current_acceleration = acceleration * dodge_coeff
-		current_friction = friction * dodge_coeff
+		target_speed = speed * dodge_speed_coeff
+		current_acceleration = acceleration * dodge_acc_coeff
+		current_friction = friction * dodge_fric_coeff
 		
 	if Player.isLightAttacking:
 		stamina_recovery_timer = 0
