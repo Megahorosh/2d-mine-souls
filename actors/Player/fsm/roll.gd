@@ -16,7 +16,7 @@ func enter(_msg: Dictionary = {}) -> void:
 		stamina_consumed = true
 	# если стамины не хватило, можно сразу выйти (флаг останется false)
 	
-	$"../../Debug/VBoxContainer/state".text = name
+	$"../../../Debug/VBoxContainer/state".text = name
 
 func exit() -> void:
 	Player.isDodging = false

@@ -6,7 +6,7 @@ var start_time: float = 0.0
 func enter(_msg: Dictionary = {}) -> void:
 	Player.isSprinting = true
 	start_time = Time.get_ticks_msec() / 1000.0   # время в секундах
-	$"../../Debug/VBoxContainer/state".text = name
+	$"../../../Debug/VBoxContainer/state".text = name
 
 func exit() -> void:
 	Player.isSprinting = false
@@ -15,6 +15,9 @@ func inner_physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	player.animation.play("sprint")
 	
+	if Input.is_action_just_pressed("light_attack"):
+		stateMachine.changeTo("LightAttack")
+		return
 	# Если перестали двигаться – сразу в Idle
 	if direction == Vector2.ZERO:
 		stateMachine.changeTo("Idle")

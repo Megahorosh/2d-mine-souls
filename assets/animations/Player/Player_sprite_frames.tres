@@ -6,18 +6,30 @@
 [ext_resource type="Texture2D" uid="uid://dnf03vhvr64l2" path="res://assets/animations/Player/idle/idle_3.png" id="4_8q0fi"]
 [ext_resource type="Texture2D" uid="uid://1l4wvdrjluer" path="res://assets/animations/Player/idle/idle_4.png" id="5_rag0u"]
 [ext_resource type="Texture2D" uid="uid://bw5o2r8ecggjg" path="res://assets/animations/Player/idle/idle_5.png" id="6_gmc6m"]
+[ext_resource type="Texture2D" uid="uid://chnic3w2yevrx" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_0.png" id="7_owvxj"]
 [ext_resource type="Texture2D" uid="uid://c1xpab5n5pswo" path="res://assets/animations/Player/roll/roll_0.png" id="7_xf2h4"]
+[ext_resource type="Texture2D" uid="uid://bmqigd6bqwip0" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_1.png" id="8_17u2t"]
 [ext_resource type="Texture2D" uid="uid://c4wgmitdjeenh" path="res://assets/animations/Player/roll/roll_1.png" id="8_qixml"]
+[ext_resource type="Texture2D" uid="uid://278voklo4ruq" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_2.png" id="9_31q81"]
 [ext_resource type="Texture2D" uid="uid://b0y02l4d5t4py" path="res://assets/animations/Player/roll/roll_2.png" id="9_h1lbt"]
+[ext_resource type="Texture2D" uid="uid://cyw4g2uebyxmn" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_3.png" id="10_6wuc6"]
 [ext_resource type="Texture2D" uid="uid://bswvsltxh1x6m" path="res://assets/animations/Player/roll/roll_3.png" id="10_obahl"]
 [ext_resource type="Texture2D" uid="uid://b4l0im4f1yda8" path="res://assets/animations/Player/roll/roll_4.png" id="11_npofn"]
+[ext_resource type="Texture2D" uid="uid://5255uvk7ywd8" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_4.png" id="11_wvio0"]
+[ext_resource type="Texture2D" uid="uid://c5b1361naitue" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_5.png" id="12_3kjct"]
 [ext_resource type="Texture2D" uid="uid://cywgin6uiibc0" path="res://assets/animations/Player/roll/roll_5.png" id="12_5rijb"]
+[ext_resource type="Texture2D" uid="uid://dvqvuaxrqpl8j" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_6.png" id="13_v8fhn"]
 [ext_resource type="Texture2D" uid="uid://bq88cp22nw3ch" path="res://assets/animations/Player/run/run_0.png" id="13_vxmlx"]
+[ext_resource type="Texture2D" uid="uid://fp1o2rw4rpp5" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_7.png" id="14_bg77g"]
 [ext_resource type="Texture2D" uid="uid://ccq4ejpjjg1xk" path="res://assets/animations/Player/run/run_1.png" id="14_mu41t"]
+[ext_resource type="Texture2D" uid="uid://d2av1t1y7epp5" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_8.png" id="15_vlxcu"]
 [ext_resource type="Texture2D" uid="uid://bthyahf6nb0ic" path="res://assets/animations/Player/run/run_2.png" id="15_waemb"]
+[ext_resource type="Texture2D" uid="uid://cvkw5js5ckoxn" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_9.png" id="16_itff3"]
 [ext_resource type="Texture2D" uid="uid://dibosrldwh2pt" path="res://assets/animations/Player/run/run_3.png" id="16_qacbn"]
+[ext_resource type="Texture2D" uid="uid://qrphs34fli7" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_10.png" id="17_2psio"]
 [ext_resource type="Texture2D" uid="uid://2ycvx3dtb1v8" path="res://assets/animations/Player/run/run_4.png" id="17_h1lbt"]
 [ext_resource type="Texture2D" uid="uid://chqlyqojbclh4" path="res://assets/animations/Player/run/run_5.png" id="17_kgbms"]
+[ext_resource type="Texture2D" uid="uid://bkq33sik67qsw" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_alebarda_11.png" id="18_0ges1"]
 [ext_resource type="Texture2D" uid="uid://cyiyop7oe5x4s" path="res://assets/animations/Player/run/run_6.png" id="18_h0kgw"]
 [ext_resource type="Texture2D" uid="uid://bop7803k1n7ko" path="res://assets/animations/Player/run/run_7.png" id="19_0b03c"]
 [ext_resource type="Texture2D" uid="uid://bxlg8jc8wjhd5" path="res://assets/animations/Player/run/run_8.png" id="20_2g7sw"]
@@ -57,6 +69,47 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_owvxj")
+}, {
+"duration": 1.6,
+"texture": ExtResource("8_17u2t")
+}, {
+"duration": 1.5,
+"texture": ExtResource("9_31q81")
+}, {
+"duration": 1.5,
+"texture": ExtResource("10_6wuc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wvio0")
+}, {
+"duration": 0.6,
+"texture": ExtResource("12_3kjct")
+}, {
+"duration": 0.5,
+"texture": ExtResource("13_v8fhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bg77g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vlxcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_itff3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2psio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0ges1")
+}],
+"loop": 1,
+"name": &"light_attack_alebarda",
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,

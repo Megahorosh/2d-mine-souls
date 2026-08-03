@@ -14,7 +14,9 @@ static var playerDirection: Vector2 = Vector2.ZERO
 static var isSprinting: bool = false
 static var isDodging: bool = false
 static var isWalking: bool = false
+static var isLightAttacking: bool = false
 
 static var move_controller: MoveController = null
 
-@onready var animation = $AnimatedSprite2D
+@onready var animation = $AnimationPlayer
+#@onready var weapon_animation = $AnimationPlayer
