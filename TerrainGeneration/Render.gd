@@ -2,6 +2,7 @@ class_name Render
 extends Node
 
 @export var Player: Node2D
+@export var camera: Node2D
 @export var tile: PackedScene
 @export var water_tile: PackedScene
 @export var tile_size_x: int = 64
@@ -22,8 +23,30 @@ var tex_water_bottom = preload("res://assets/tiles/water_bottom.png")
 var tex_water = preload("res://assets/tiles/water.png")
 var tex_grass = preload("res://assets/tiles/grass.png")
 var tex_grass_wall = preload("res://assets/tiles/grass_wall.png")
+var tex_humus = preload("res://assets/tiles/humus.png")
+var tex_humus_wall = preload("res://assets/tiles/humus_wall.png")
+var tex_sand = preload("res://assets/tiles/sand.png")
+var tex_sand_wall = preload("res://assets/tiles/sand_wall.png")
+var tex_snow = preload("res://assets/tiles/snow.png")
+var tex_snow_wall = preload("res://assets/tiles/snow_wall.png")
+var tex_steppe = preload("res://assets/tiles/steppe.png")
+var tex_steppe_wall = preload("res://assets/tiles/steppe_wall.png")
+var tex_meadow = preload("res://assets/tiles/meadow.png")
+var tex_meadow_wall = preload("res://assets/tiles/meadow_wall.png")
+
+var center_of_map_x = 0
+var center_of_map_y = 0
 
 func _ready() -> void:
+	center_of_map_x = Worldgen.array_size/2*tile_size_x
+	center_of_map_y = Worldgen.array_size/2*tile_size_y
+	
+	Player.global_position.x = center_of_map_x
+	Player.global_position.y = center_of_map_y
+	camera.global_position.x = center_of_map_x
+	camera.global_position.y = center_of_map_y
+	
+	
 	playerPosRoundedX = round(Player.global_position.x / tile_size_x) * tile_size_x
 	playerPosRoundedY = round(Player.global_position.y / tile_size_y) * tile_size_y
 
@@ -52,6 +75,16 @@ func _process(delta: float) -> void:
 		playerPosRoundedY = newRoundedY
 		gridRefresh()
 
+func is_valid_tile(tile_x: int, tile_y: int) -> bool:
+	# Проверяем, что координаты тайла находятся в пределах массивов Worldgen
+	if tile_x < 0 or tile_y < 0:
+		return false
+	if tile_x >= Worldgen.heightmap.size():
+		return false
+	if tile_y >= Worldgen.heightmap[0].size():
+		return false
+	return true
+
 func gridRefresh() -> void:
 	# Собираем множество ключей, которые должны быть видны
 	var needed_keys := {}
@@ -61,6 +94,11 @@ func gridRefresh() -> void:
 	for x in range(renderGridSizeX):
 		for y in range(renderGridSizeY):
 			var tile_coord = Vector2i(base_tile_x + x, base_tile_y + y)
+			
+			# Пропускаем тайлы с отрицательными координатами или выходящие за пределы массива
+			if not is_valid_tile(tile_coord.x, tile_coord.y):
+				continue
+				
 			needed_keys[tile_coord] = true
 
 			if not existing_tiles.has(tile_coord):
@@ -73,8 +111,8 @@ func gridRefresh() -> void:
 				add_child(ground_node)
 
 				var water_node = null
-				var depth_value = Worldgen.world[tile_coord.x][tile_coord.y]
-
+				var depth_value = Worldgen.heightmap[tile_coord.x][tile_coord.y]
+				var biome_value = Worldgen.biomemap[tile_coord.x][tile_coord.y]
 				if depth_value < 0.5:
 					# Вода: дно + водная поверхность
 					ground_node.get_child(0).get_child(0).texture = tex_water_bottom
@@ -87,14 +125,35 @@ func gridRefresh() -> void:
 					water_node.global_position = Vector2(world_x, world_y + 24)
 				else:
 					# Суша: трава + стена
-					ground_node.get_child(0).get_child(0).texture = tex_grass
-					ground_node.get_child(0).get_child(1).texture = tex_grass_wall
+					if biome_value < 0.25:
+						ground_node.get_child(0).get_child(0).texture = tex_grass
+						ground_node.get_child(0).get_child(1).texture = tex_grass_wall
+					elif biome_value >= 0.25 and biome_value < 0.40:
+						ground_node.get_child(0).get_child(0).texture = tex_humus
+						ground_node.get_child(0).get_child(1).texture = tex_humus_wall
+					elif biome_value >= 0.40 and biome_value < 0.55:
+						ground_node.get_child(0).get_child(0).texture = tex_sand
+						ground_node.get_child(0).get_child(1).texture = tex_sand_wall
+					elif biome_value >= 0.55 and biome_value < 0.70:
+						ground_node.get_child(0).get_child(0).texture = tex_snow
+						ground_node.get_child(0).get_child(1).texture = tex_snow_wall
+					elif biome_value >= 0.70 and biome_value < 0.85:
+						ground_node.get_child(0).get_child(0).texture = tex_steppe
+						ground_node.get_child(0).get_child(1).texture = tex_steppe_wall
+					elif biome_value >= 0.85:
+						ground_node.get_child(0).get_child(0).texture = tex_meadow
+						ground_node.get_child(0).get_child(1).texture = tex_meadow_wall
+					else:
+						ground_node.get_child(0).get_child(0).texture = tex_grass
+						ground_node.get_child(0).get_child(1).texture = tex_grass_wall
+						
 					ground_node.global_position = Vector2(world_x, world_y)
 
 				existing_tiles[tile_coord] = {
 					"ground": ground_node,
 					"water": water_node
 				}
+	
 	var sorted_children = []
 	for child in get_children():
 		sorted_children.append(child)
