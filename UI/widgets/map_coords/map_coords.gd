@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @export var Player: Node2D
 @export var Render: Node

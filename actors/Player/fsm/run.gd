@@ -2,18 +2,17 @@
 extends StatePlayer
 
 var start_time: float = 0.0
+var sprint_timer: float = 0
 
 func enter(_msg: Dictionary = {}) -> void:
-	Player.isSprinting = true
 	start_time = Time.get_ticks_msec() / 1000.0   # время в секундах
 	$"../../../Debug/VBoxContainer/state".text = name
 
 func exit() -> void:
 	Player.isSprinting = false
 
-func inner_physics_process(_delta: float) -> void:
+func inner_physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	player.animation.play("sprint")
 	
 	if Input.is_action_just_pressed("light_attack"):
 		stateMachine.changeTo("LightAttack")
@@ -29,7 +28,13 @@ func inner_physics_process(_delta: float) -> void:
 	
 	# Кнопка спринта всё ещё зажата – остаёмся в Sprint
 	if Input.is_action_pressed("sprint"):
+		sprint_timer += delta
+		if sprint_timer >= player.move_controller.sprint_delay:
+			Player.isSprinting = true
+			player.animation.play("sprint")
 		return
+	else:
+		sprint_timer = 0
 	
 	# Кнопку спринта отпустили – проверяем, как долго она была зажата
 	var held_duration = Time.get_ticks_msec() / 1000.0 - start_time

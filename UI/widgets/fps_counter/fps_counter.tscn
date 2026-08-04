@@ -3,23 +3,30 @@
 [ext_resource type="Script" uid="uid://bycga5r125bi3" path="res://UI/widgets/fps_counter/fps_counter.gd" id="1_bt4ml"]
 [ext_resource type="Texture2D" uid="uid://cq0t6ufvis1jm" path="res://assets/background/black_transparent_64.png" id="2_li81f"]
 
-[node name="FPS" type="Node2D" unique_id=1141856601]
+[node name="FPS" type="Control" unique_id=782981118]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="fps_counter" type="Label" parent="." unique_id=1200351620 node_paths=PackedStringArray("line2d")]
-offset_left = -144.0
-offset_top = -38.0
-offset_right = -76.0
-offset_bottom = -15.0
+layout_mode = 0
+offset_left = -296.0
+offset_right = -228.0
+offset_bottom = 23.0
 text = "fps_label"
 script = ExtResource("1_bt4ml")
 line2d = NodePath("../Node2D/Line2D")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1296093076]
-position = Vector2(-51.685, -33.42)
+position = Vector2(-205.99994, 5)
 
 [node name="Line2D" type="Line2D" parent="Node2D" unique_id=1673481875]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=839123679]
 z_index = -1
-scale = Vector2(4.7343755, 1.203125)
+position = Vector2(-152.00002, 40)
+scale = Vector2(4.746093, 1.2499999)
 texture = ExtResource("2_li81f")

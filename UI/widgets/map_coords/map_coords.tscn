@@ -3,17 +3,23 @@
 [ext_resource type="Script" uid="uid://bg17mqj2oye6v" path="res://UI/widgets/map_coords/map_coords.gd" id="1_pw0nr"]
 [ext_resource type="Texture2D" uid="uid://cq0t6ufvis1jm" path="res://assets/background/black_transparent_64.png" id="2_s5msr"]
 
-[node name="Map_coords_widget" type="Node2D" unique_id=1141856601]
+[node name="Map_coords_widget" type="Control" unique_id=1417767894]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
 script = ExtResource("1_pw0nr")
 
 [node name="map_coords_text" type="Label" parent="." unique_id=1200351620]
-offset_left = -144.0
-offset_top = -38.0
-offset_right = 135.0
-offset_bottom = 35.0
+layout_mode = 0
+offset_left = -296.0
+offset_right = -17.0
+offset_bottom = 73.0
 text = "map_coords"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=839123679]
 z_index = -1
-scale = Vector2(4.7343755, 1.203125)
+position = Vector2(-152, 40)
+scale = Vector2(4.746, 1.25)
 texture = ExtResource("2_s5msr")

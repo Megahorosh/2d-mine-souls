@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cq6jsqbu4hglh"]
+
+[ext_resource type="Script" uid="uid://vgcji35rdw01" path="res://UI/entities/Bars/Bar.gd" id="1_pflro"]
+[ext_resource type="PackedScene" uid="uid://dsg8t1xsegj81" path="res://UI/entities/Bars/progress_bar.tscn" id="2_pflro"]
+
+[node name="Bar" type="Control" unique_id=425873327]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pflro")
+
+[node name="Label" type="Label" parent="." unique_id=460127258]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ProgressBar" parent="." unique_id=815838724 instance=ExtResource("2_pflro")]
+layout_mode = 0
+offset_bottom = 12.0

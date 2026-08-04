@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cpg08qcqvwp4k"]
 
-[ext_resource type="PackedScene" uid="uid://dt3grk1ic4utg" path="res://actors/Player/player.tscn" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://dt3grk1ic4utg" path="res://actors/Player/Player.tscn" id="1_epypp"]
 [ext_resource type="Texture2D" uid="uid://d4ic7rfiyp2aj" path="res://icon.svg" id="1_wtcfe"]
-[ext_resource type="PackedScene" uid="uid://cq6jsqbu4hglh" path="res://UI/entities/Bars/StaminaBar/stamina_bar.tscn" id="3_epypp"]
+[ext_resource type="PackedScene" uid="uid://cq6jsqbu4hglh" path="res://UI/entities/Bars/Bar.tscn" id="3_epypp"]
 [ext_resource type="PackedScene" uid="uid://f6qikm3d5vsx" path="res://TerrainGeneration/terrain_renderer.tscn" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://c01i27h32qfm4" path="res://UI/widgets/fps_counter/fps_counter.tscn" id="4_5crlr"]
 [ext_resource type="PackedScene" uid="uid://bisemnfrsgvxf" path="res://UI/widgets/map_coords/map_coords.tscn" id="4_hbc2u"]
@@ -33,36 +33,52 @@ shape = SubResource("RectangleShape2D_d0u6y")
 layout_mode = 3
 anchors_preset = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=190154564]
+[node name="PlayerStates" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=190154564]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 10.0
 offset_bottom = 24.000002
-scale = Vector2(2, 2)
 offset_transform_enabled = true
 theme_override_constants/separation = 16
 
-[node name="Stamina" parent="CanvasLayer/Control/VBoxContainer" unique_id=536819698 instance=ExtResource("3_epypp")]
+[node name="Health" parent="CanvasLayer/Control/PlayerStates" unique_id=425873327 instance=ExtResource("3_epypp")]
+layout_mode = 2
+
+[node name="Mana" parent="CanvasLayer/Control/PlayerStates" unique_id=2053568706 instance=ExtResource("3_epypp")]
+layout_mode = 2
+
+[node name="Stamina" parent="CanvasLayer/Control/PlayerStates" unique_id=654637637 instance=ExtResource("3_epypp")]
+layout_mode = 2
 
 [node name="Control2" type="Control" parent="CanvasLayer" unique_id=920279775]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -299.0
+offset_bottom = 192.0
 grow_horizontal = 0
+offset_transform_position = Vector2(-86.82, 0)
 
-[node name="Map_coords_widget" parent="CanvasLayer/Control2" unique_id=1141856601 node_paths=PackedStringArray("Player", "Render") instance=ExtResource("4_hbc2u")]
-position = Vector2(-80, 106)
-scale = Vector2(0.7200001, 0.7200001)
-Player = NodePath("../../../Player")
-Render = NodePath("../../../TerrainGenerator")
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control2" unique_id=422364426]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_bottom = 84.0
+grow_horizontal = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-8, 8)
+theme_override_constants/separation = 89
 
-[node name="FPS" parent="CanvasLayer/Control2" unique_id=984221827 instance=ExtResource("4_5crlr")]
-position = Vector2(-80, 36)
-scale = Vector2(0.72, 0.72)
+[node name="FPS" parent="CanvasLayer/Control2/VBoxContainer" unique_id=984221827 instance=ExtResource("4_5crlr")]
+layout_mode = 2
+
+[node name="Map_coords_widget" parent="CanvasLayer/Control2/VBoxContainer" unique_id=1141856601 node_paths=PackedStringArray("Player", "Render") instance=ExtResource("4_hbc2u")]
+layout_mode = 2
+Player = NodePath("../../../../Player")
+Render = NodePath("../../../../TerrainGenerator")
 
 [node name="TerrainGenerator" parent="." unique_id=1336938675 node_paths=PackedStringArray("Player", "camera") instance=ExtResource("4_0hol4")]
 z_index = -1

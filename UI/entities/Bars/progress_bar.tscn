@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dsg8t1xsegj81"]
+
+[ext_resource type="StyleBox" uid="uid://c6hmaioex7rv8" path="res://UI/Themes/StatesBars/Stamina/StaminaProgressBarBackground.tres" id="1_0kuvi"]
+[ext_resource type="StyleBox" uid="uid://dck61p2w66vgb" path="res://UI/Themes/StatesBars/Stamina/StaminaProgressBarFill.tres" id="2_rkwin"]
+
+[node name="ProgressBar" type="ProgressBar" unique_id=815838724]
+offset_right = 74.355
+offset_bottom = 16.0
+theme_override_styles/background = ExtResource("1_0kuvi")
+theme_override_styles/fill = ExtResource("2_rkwin")
+step = 1.0
+value = 85.0
+show_percentage = false

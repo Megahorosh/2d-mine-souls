@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b7ur4ovc5er4j" path="res://actors/Player/MoveController.gd" id="1_mvpqy"]
 [ext_resource type="Script" uid="uid://clmkvow6yw3a2" path="res://global/Player.gd" id="2_xcvco"]
-[ext_resource type="Texture2D" uid="uid://7y2jn06dr1o0" path="res://assets/weapons/alebardas/alebarda/alebarda_1.png" id="4_pmgru"]
 [ext_resource type="Script" uid="uid://dbeu5lgn0gmiv" path="res://actors/Player/fsm/StateMachine.gd" id="4_yf7wk"]
 [ext_resource type="Script" uid="uid://c27x6pnnwrmoc" path="res://actors/Player/fsm/idle.gd" id="5_h27ub"]
 [ext_resource type="Texture2D" uid="uid://cij1nrr2sw3rq" path="res://assets/animations/Player/light_attack_alebarda/light_attaсk_0-0.png" id="5_wouwq"]
@@ -15,6 +14,7 @@
 [ext_resource type="Script" uid="uid://b51w0bfvqbuq6" path="res://actors/Player/fsm/run.gd" id="7_xcvco"]
 [ext_resource type="Script" uid="uid://cfib64eqej815" path="res://actors/Player/fsm/roll.gd" id="8_kbb24"]
 [ext_resource type="Script" uid="uid://drqan7djjxjqp" path="res://actors/Player/fsm/light_attack.gd" id="9_xcvco"]
+[ext_resource type="Texture2D" uid="uid://cm0ueg426bava" path="res://assets/animations/Player/run/run_11.png" id="11_kbb24"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fuia"]
 radius = 18.0
@@ -94,18 +94,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [3]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Player/PlayerSprite:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.9999999, -34.999996)]
-}
 
 [sub_resource type="Animation" id="Animation_qfpmw"]
 resource_name = "idle"
@@ -184,18 +172,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [1.8325958, 1.8033024, 1.636297, 1.6668254, 1.6474123, 1.6841685]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Player/PlayerSprite:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.9999999, -34.999996)]
-}
 
 [sub_resource type="Animation" id="Animation_a0hew"]
 resource_name = "light_attack_alebarda"
@@ -273,23 +249,12 @@ tracks/5/keys = {
 "update": 1,
 "values": [3]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Player/PlayerSprite:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.9999999, -34.999996)]
-}
 
 [sub_resource type="Animation" id="Animation_dhpng"]
 resource_name = "roll"
-length = 0.8
-step = 0.1333
+length = 0.5
+loop_mode = 1
+step = 0.083333336
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -333,7 +298,7 @@ tracks/3/path = NodePath("Player/PlayerSprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334, 0.41666666),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
@@ -345,7 +310,7 @@ tracks/4/path = NodePath("Player/Weapon:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334, 0.41666666),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(33.000004, -74), Vector2(36.000004, -102), Vector2(34.000004, -114), Vector2(33.750004, -104), Vector2(33.500004, -94), Vector2(30.000004, -63.999992)]
@@ -357,22 +322,10 @@ tracks/5/path = NodePath("Player/Weapon:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334, 0.41666666),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [1.8325958, 1.7172569, 1.3089969, 1.176553, 0.92305624, 0.7758957]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Player/PlayerSprite:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(2, -25.97), Vector2(2, -27.49), Vector2(2, -18.46), Vector2(2, -21.19), Vector2(2, -22.19), Vector2(2, -28.015)]
 }
 
 [sub_resource type="Animation" id="Animation_k5to8"]
@@ -452,18 +405,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [0.5235988, 0.7853982, 0.8319957, 1.0471976, 1.5707964, 1.8325958, 2.0943952, 2.3561945, 1.7453293, 1.5707964]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Player/PlayerSprite:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.9999999, -34.999996)]
-}
 
 [sub_resource type="Animation" id="Animation_d8ful"]
 resource_name = "walk"
@@ -541,18 +482,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [1.5707964, 2.0049536, 2.0943952, 2.3561945, 1.8325958, 1.5707964, 1.3089969, 1.0471976]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Player/PlayerSprite:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.9999999, -34.999996)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hyena"]
 _data = {
@@ -608,8 +537,8 @@ script = ExtResource("2_xcvco")
 [node name="Weapon" type="Sprite2D" parent="Player" unique_id=777040898]
 position = Vector2(59.045, -52)
 rotation = 0.9512044
-scale = Vector2(0.525, 0.525)
-texture = ExtResource("4_pmgru")
+scale = Vector2(0.16008607, 0.6982463)
+texture = ExtResource("11_kbb24")
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player" unique_id=816890685]
 position = Vector2(1.9999999, -34.999996)
